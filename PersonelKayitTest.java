@@ -33,8 +33,19 @@ public class PersonelKayitTest {
 	            personeller[i].maasHesapla();
 	        }
 
+                 for (int i = 0; i < personeller.length-1; i++) {
+				
+	        	for (int j = 0; j < personeller.length-i-1; j++) {
+				if (personeller[i].netMaas< personeller[j].netMaas) {
+				      Personel temp=personeller[i];
+				      personeller[i] = personeller[j];
+	                              personeller[j] = temp;
+				}
+			}
+	    }
 
-	        System.out.println("Personel Listesi:");
+
+	        System.out.println("Maaslarina gore siralanmis personel listesi:");
 	        for (Personel p : personeller) {
 	            System.out.println(p);
 	        }
