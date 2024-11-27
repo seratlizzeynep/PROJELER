@@ -1,0 +1,70 @@
+abstract class Function {
+    
+    public abstract double calculateFunctionResult();
+}
+//------------------------------------------------
+class Cal1 extends Function {
+    private double number1;
+    private double number2;
+
+   
+    public Cal1(double number1, double number2) {
+        this.number1 = number1;
+        this.number2 = number2;
+    }
+
+    @Override
+    public double calculateFunctionResult() {
+        return 1 / ((1 / number1) + (1 / number2));
+    }
+}
+
+// -------------------------
+class Cal2 extends Function {
+    private double number1;
+    private double number2;
+
+   
+    public Cal2(double number1, double number2) {
+        this.number1 = number1;
+        this.number2 = number2;
+    }
+
+   
+    @Override
+    public double calculateFunctionResult() {
+        return (number1 + number2) * number1 * number2;
+    }
+}
+
+// --------------------------------------
+class Calculator {
+    
+    public double calculateResult(Cal1 calnum1) {
+        return calnum1.calculateFunctionResult();
+    }
+
+  
+    public double calculateResult(Cal2 calnum2) {
+        return calnum2.calculateFunctionResult();
+    }
+}
+
+//----------------------------
+public class Main {
+    public static void main(String[] args) {
+       
+        Cal1 calnum1 = new Cal1(9, 10);
+        Cal2 calnum2 = new Cal2(9, 10);
+
+       
+        Calculator res = new Calculator();
+
+        
+        double Cal1Result1 = res.calculateResult(calnum1);
+       System.out.println("The Result of the Function Cal1 " + Cal1Result1);
+
+        double Cal2Result1 = res.calculateResult(calnum2);
+        System.out.println("The Result of the Function Cal2 " + Cal2Result1);
+    }
+}
