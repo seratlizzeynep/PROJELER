@@ -1,0 +1,46 @@
+public class Main {
+    public static void main(String[] args) {
+        SchoolManagementSystem school = new SchoolManagementSystem();
+
+        
+        Teacher teacher1 = new Teacher(1, "Ali", "Mathematics");
+        Teacher teacher2 = new Teacher(2, "Ayşe", "Physics");
+
+        Student student1 = new Student(1, "Ahmet", "Yılmaz");
+        Student student2 = new Student(2, "Fatma", "Kaya");
+        Student student3 = new Student(3, "Mehmet", "Demir");
+
+        
+        school.addTeacher(teacher1);
+        school.addTeacher(teacher2);
+
+        school.addStudent(student1);
+        school.addStudent(student2);
+        school.addStudent(student3);
+
+       
+        Course course1 = new Course("Mathematics", teacher1);
+        course1.enrollStudent(student1);
+        course1.enrollStudent(student2);
+
+        Course course2 = new Course("physics", teacher2);
+        course2.enrollStudent(student2);
+        course2.enrollStudent(student3);
+
+        school.addCourse(course1);
+        school.addCourse(course2);
+
+        System.out.println("Teachers:");
+        school.listTeachers();
+
+        System.out.println("\nStudents:");
+        school.listStudents();
+
+        System.out.println("\nCourses:");
+        school.listCourses();
+
+        System.out.println("\nCourse Students:");
+        course1.showStudents();
+        course2.showStudents();
+    }
+}
