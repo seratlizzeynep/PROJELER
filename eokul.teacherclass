@@ -1,0 +1,28 @@
+public class Teacher {
+    private int id;
+    private String name;
+    private String expertise;
+
+    public Teacher(int id, String name, String expertise) {
+        this.id = id;
+        this.name = name;
+        this.expertise = expertise;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getExpertise() {
+        return expertise;
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher ID: " + id + ", Name: " + name + ", Expertise: " + expertise;
+    }
+}
