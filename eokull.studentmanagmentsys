@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class SchoolManagementSystem {
+    private List<Student> students;
+    private List<Teacher> teachers;
+    private List<Course> courses;
+
+    public SchoolManagementSystem() {
+        students = new ArrayList<>();
+        teachers = new ArrayList<>();
+        courses = new ArrayList<>();
+    }
+
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+
+    public void addTeacher(Teacher teacher) {
+        teachers.add(teacher);
+    }
+
+    public void addCourse(Course course) {
+        courses.add(course);
+    }
+
+    public void listCourses() {
+        for (Course course : courses) {
+            System.out.println(course);
+        }
+    }
+
+    public void listStudents() {
+        for (Student student : students) {
+            System.out.println(student);
+        }
+    }
+
+    public void listTeachers() {
+        for (Teacher teacher : teachers) {
+            System.out.println(teacher);
+        }
+    }
+}
