@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Course {
+    private String courseName;
+    private Teacher teacher;
+    private List<Student> students;
+
+    public Course(String courseName, Teacher teacher) {
+        this.courseName = courseName;
+        this.teacher = teacher;
+        this.students = new ArrayList<>();
+    }
+
+    public void enrollStudent(Student student) {
+        students.add(student);
+    }
+
+    public void showStudents() {
+        System.out.println("Students in " + courseName + ":");
+        for (Student student : students) {
+            System.out.println(student);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Course: " + courseName + ", Teacher: " + teacher.getName();
+    }
+}
